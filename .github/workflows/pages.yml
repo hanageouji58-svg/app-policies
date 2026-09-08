@@ -24,6 +24,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Reject unresolved publication placeholders
+        shell: bash
+        run: |
+          if grep -R -nE --include='*.html' '\{\{[A-Z0-9_]+\}\}' .; then
+            echo 'Publication blocked: resolve all public-site placeholders first.'
+            exit 1
+          fi
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
