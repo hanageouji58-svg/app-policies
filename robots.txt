@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hanageouji58-svg.github.io/app-policies/sitemap.xml

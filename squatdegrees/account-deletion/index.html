@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="スクワット判定員のアカウント、クラウドデータ、端末内データの削除方法。">
+    <meta name="theme-color" content="#09111f">
+    <link rel="canonical" href="https://hanageouji58-svg.github.io/app-policies/squatdegrees/account-deletion/">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>アカウント・データ削除 | スクワット判定員</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../../">スクワット判定員<small>公開ポリシー</small></a>
+        <nav aria-label="主要メニュー">
+          <a href="../">アプリ案内</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="./">削除案内</a>
+          <a href="../support/">サポート</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      <section>
+        <p class="eyebrow">Account & data deletion</p>
+        <h1>アカウント・データ削除</h1>
+        <p class="lede">対象アプリ：スクワット判定員。アプリ内の削除操作と、アプリを使えない場合の問い合わせ方法を案内します。</p>
+        <div class="notice">
+          <strong>公開前の確認が必要です</strong>
+          <p>問い合わせ先とPanelPower側の削除完了条件が未確認のため、現時点ではGoogle Playへ登録する公開URLではありません。公開時にはこのページを機能する外部URLとして登録します。</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>1. アプリ内から削除する</h2>
+        <h3>スクワット判定員だけのクラウドデータ</h3>
+        <ol>
+          <li>スクワット判定員を開きます。</li>
+          <li>設定を開き、PanelPower連携の「データとアカウント管理」へ進みます。</li>
+          <li>「スクワット判定員の連携記録を削除」を選び、内容を確認して実行します。</li>
+          <li>完了メッセージを確認します。</li>
+        </ol>
+        <p>この操作は <code>deleteMyConnectedAppData</code> を呼び、スクワット判定員の連携記録と、同じサーバー側のアプリ単位ランキングデータの削除を依頼します。成功確認後に端末の送信待ちデータとランキングキャッシュを削除します。</p>
+
+        <h3>共通アカウントと全クラウドデータ</h3>
+        <ol>
+          <li>同じ設定画面で「アカウントと全クラウドデータを削除」を選びます。</li>
+          <li>GoogleまたはAppleで再認証します。</li>
+          <li>サーバー側の削除処理が完了するまで待ちます。</li>
+          <li>完了後、Firebase Authからログアウトされたことを確認します。</li>
+        </ol>
+        <p>PanelPower側の再開可能な共通削除処理を使用し、完了を確認してからログアウトします。途中でアプリを閉じても、保持された処理情報で続行を試みます。</p>
+      </section>
+
+      <section>
+        <h2>2. 削除範囲の違い</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>操作</th><th>削除対象</th><th>削除しないもの</th></tr></thead>
+            <tbody>
+              <tr><td>アプリ単位のクラウド削除</td><td>スクワット判定員に紐づくPanelPower連携記録、サーバー側のアプリ単位ランキングデータ</td><td>PanelPower全体の共通アカウント、他アプリの記録、端末内履歴、Pro購入状態、Google Play購入記録</td></tr>
+              <tr><td>共通アカウント削除</td><td>Firebase Authと、PanelPower側の共通削除処理で対象となるクラウドデータ</td><td>端末内履歴・設定、端末内Pro権利キャッシュ、Google Play注文記録。PanelPower側の対象範囲は要確認</td></tr>
+              <tr><td>端末内データ削除</td><td>設定、履歴、EXP、実績、称号、通知設定、送信待ち、ランキングキャッシュ、Pro端末キャッシュ等</td><td>クラウドのPanelPower・ランキング記録、Firebase Auth、Google Play購入記録</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>PanelPower連携をOFFにするだけでは、過去のクラウド記録やランキング公開データを削除しません。削除には上記の操作を使用してください。</p>
+      </section>
+
+      <section>
+        <h2>3. PanelPower側に残る情報</h2>
+        <p>アプリ単位削除では、PanelPower全体の共通アカウントや他アプリの記録は対象外です。共通アカウント削除ではPanelPower側の共通削除処理を呼びますが、削除対象、法令上の保持、バックアップから消える時期、完了までの期間はPanelPower運営者の仕様確認が必要です。</p>
+        <p>PanelPowerのプライバシー案内：<span class="placeholder">{{PANELPOWER_PRIVACY_URL}}</span></p>
+      </section>
+
+      <section>
+        <h2>4. アンインストール、再インストール、購入復元</h2>
+        <p>アンインストールだけではFirebase Auth、PanelPowerのクラウドデータ、ランキング公開データ、Google Play購入記録は削除されません。端末内データは通常OS管理下で削除されますが、バックアップ・自動復元や端末設定の扱いは保証できません。</p>
+        <p>再インストール後、端末内履歴・設定が自動で戻ることは保証しません。Proは同じGoogle Playアカウント等の条件が整えば、設定画面から購入状態を復元できます。クラウドデータ削除でGoogle Playの注文・領収書・返金情報は削除しません。</p>
+      </section>
+
+      <section>
+        <h2>5. Webからの削除依頼</h2>
+        <p>アプリを利用できない場合、またはアプリ内操作が完了しない場合は、次の窓口へ依頼できます。公開前に実在の連絡先へ置き換えます。</p>
+        <ul>
+          <li>メール：<span class="placeholder">{{SUPPORT_EMAIL}}</span></li>
+          <li>サポート：<span class="placeholder">{{SUPPORT_URL}}</span></li>
+        </ul>
+        <p>「スクワット判定員のアカウント削除依頼」と明記し、Google／Appleのどちらでログインしたか、削除対象がアプリ単位か共通アカウントかを示してください。パスワード、購入決済情報、アクセストークン、秘密鍵は送らないでください。</p>
+        <p>第三者による削除を防ぐため、運営者がログインプロバイダー、登録メールアドレスの一部など合理的な本人確認を求める場合があります。本人確認方法、受付・完了目安、法令上保持する情報と期間は公開前に確定します。</p>
+      </section>
+
+      <section>
+        <h2>6. 保持される可能性があるもの</h2>
+        <ul>
+          <li>削除操作をしていない端末内履歴・設定</li>
+          <li>アプリ単位削除後も残るPanelPower共通アカウント・他アプリ記録</li>
+          <li>Google Playの購入・注文・返金記録</li>
+          <li>法令、不正防止、紛争対応のためサービス側で保持が必要な情報</li>
+          <li>バックアップに残る情報（具体的な消去時期は要確認）</li>
+        </ul>
+        <p>端末内データの保持は削除操作、OSのアプリデータ削除、アンインストール等までです。PanelPower、ランキング、Firebase Auth、削除処理ログの保存期間は要確認です。</p>
+      </section>
+
+      <section class="notice">
+        <strong>公開時の要件</strong>
+        <p>Google Playの公式要件に従い、外部ページは機能し、削除方法が見つけやすく、スクワット判定員または開発者名を明記し、アプリを再インストールしなくても削除依頼を開始できる状態にします。</p>
+        <p><a href="https://support.google.com/googleplay/android-developer/answer/13327111?hl=ja">Google Playのアカウント削除要件</a>、<a href="https://support.google.com/googleplay/android-developer/answer/10144311?hl=ja">Google Playユーザーデータポリシー</a></p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="shell">
+        <nav aria-label="フッターメニュー">
+          <a href="../../">ホーム</a>
+          <a href="../">アプリ案内</a>
+          <a href="../privacy/">プライバシー</a>
+          <a href="../support/">サポート</a>
+        </nav>
+        <p>問い合わせ：<span class="placeholder">{{SUPPORT_EMAIL}}</span></p>
+      </div>
+    </footer>
+  </body>
+</html>
