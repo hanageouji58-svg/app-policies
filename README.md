@@ -4,11 +4,11 @@
 
 ## 現在の状態
 
-2026年9月8日時点の公開情報を反映済みです。PanelPower側のプライバシーポリシーURL、保持期間、バックアップ、削除完了条件は確認できていないため、サイトでは具体値や架空URLを掲載していません。
+2026年9月14日時点の公開情報を反映する原稿です。PanelPowerの共通アカウント削除について、通常のクラウドデータとFirebase Authを削除した後も、削除済みデータの復活防止用fenceを期限を設けず保持する実装を確認しています。未確認のバックアップ消去時期や架空のPanelPower URLは掲載していません。
 
 公開後も、次の外部サービスの仕様は確認できた時点で更新してください。
 
-- PanelPowerのプライバシーURL、保持期間、削除完了条件
+- PanelPowerのバックアップ消去時期と、fence以外の運用上の保持期間
 - バックアップからの消去時期
 
 ## 公開URL
@@ -25,4 +25,4 @@
 
 .github/workflows/pages.yml はGitHub公式のPages Actionsを使う構成です。公開リポジトリを作成して値を確認した後、Pagesの公開元をGitHub Actionsに設定して使用します。Play Consoleのアカウント削除URLには、アプリを再インストールしなくても削除依頼を開始できる、機能する外部ページを登録してください。
 
-このサイトの内容は、Squatdegrees本体のコード監査と docs/google_play/ の原稿に基づきます。PanelPower側のFunctions、Firestore Rules、保持期間、バックアップ、削除完了条件は別管理のため、確認前に断定しません。
+このサイトの内容は、Squatdegrees本体のコード監査、PanelPowerのPR #9でmergeされた削除実装、Squatdegreesの `docs/google_play/` 原稿に基づきます。確認できたfenceの保存項目・目的・無期限保持は明記し、バックアップ消去時期など未確認事項は断定しません。
