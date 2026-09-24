@@ -59,13 +59,14 @@
           <table>
             <thead><tr><th>操作</th><th>削除対象</th><th>削除しないもの</th></tr></thead>
             <tbody>
+              <tr><td>ランキング参加をOFF</td><td>サーバー上のランキング公開プロフィール、端末内ランキングキャッシュ・送信待ちデータ</td><td>ワークアウト履歴、EXP、実績、PanelPower記録、Firebase Authアカウント</td></tr>
               <tr><td>アプリ単位のクラウド削除</td><td>スクワット判定員に紐づくPanelPower連携記録、サーバー側のアプリ単位ランキングデータ</td><td>PanelPower全体の共通アカウント、他アプリの記録、端末内履歴、Pro購入状態、Google Play購入記録</td></tr>
               <tr><td>共通アカウント削除</td><td>Firebase Auth、PanelPowerの通常の共通クラウドデータ、Connected Training、ランキング情報</td><td>端末内履歴・設定、端末内Pro権利キャッシュ、Google Play注文記録、PanelPowerの復活防止情報</td></tr>
               <tr><td>端末内データ削除</td><td>設定、履歴、EXP、実績、称号、通知設定、送信待ち、ランキングキャッシュ、Pro端末キャッシュ等</td><td>クラウドのPanelPower・ランキング記録、Firebase Auth、Google Play購入記録</td></tr>
             </tbody>
           </table>
         </div>
-        <p>PanelPower連携をOFFにするだけでは、過去のクラウド記録やランキング公開データを削除しません。削除には上記の操作を使用してください。</p>
+        <p>PanelPower記録同期をOFFにしても、過去のPanelPowerクラウド記録は削除されません。ランキング参加をOFFにするとランキング公開プロフィールと端末内のランキングキャッシュ・送信待ちデータが削除されます。ランキング参加とPanelPower記録同期は別の設定です。</p>
       </section>
 
       <section>
